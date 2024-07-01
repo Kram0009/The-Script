@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="bg">
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"><i class="fa fa-bars"></i></label>
+        <label class="logo">The Script</label>
+
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="album.html">Album</a></li>
+        </ul>
+    </nav>
+        <div class="content">
+        <div class="slide-container">
+            <img class="mySlides glow" src="img1.jpg" alt="Slide 1">
+            <img class="mySlides" src="img2.jpg" alt="Slide 2">
+            <img class="mySlides" src="img3.jpg" alt="Slide 3">
+            <img class="mySlides" src="img4.jpg" alt="Slide 4">
+            <img class="mySlides" src="img5.jpg" alt="Slide 5">
+        </div>   
+    </div>
+    </div>
+</div>
+    <script>
+        var myIndex = 0;
+        var slides = document.getElementsByClassName("mySlides");
+        var glowTimeout;
+
+        function carousel() {
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slides[i].classList.remove("glow");
+            }
+
+            myIndex++;
+            if (myIndex > slides.length) { myIndex = 1; }
+
+            slides[myIndex - 1].style.display = "block";
+            slides[myIndex - 1].classList.add("glow");
+
+            clearTimeout(glowTimeout);
+            glowTimeout = setTimeout(function() {
+                slides[myIndex - 1].classList.remove("glow");
+            }, 2000);
+        }
+
+        setTimeout(function() {
+            carousel();
+            setInterval(carousel, 2000);
+        }, 1100);
+    </script>
+</body>
+</html>

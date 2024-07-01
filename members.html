@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="members.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"><i class="fa fa-bars"></i></label>
+        <label class="logo">The Script</label>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="active" href="members.html">Members</a></li>
+            <li><a href="album.html">Album</a></li>
+        </ul>
+    </nav>
+    <div id="image-area">
+        <div class="content">
+            <div class="box-area">
+                <div class="box">
+                    <img src="danny.jpg" alt="danny" width="400px" height="675px">
+                    <div class="overlay">
+                        <h3>Danny O'Donoghue</h3>
+                        <p>Daniel John Mark Luke O'Donoghue (born 3 October 1980) is an Irish singer-songwriter best known for being
+                         the frontman of the Irish rock band The Script and as a coach on the first two series of the television singing
+                         talent show The Voice UK. He was earlier a member of the Irish boy band Mytown.</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="mark.jpg" alt="mark" width="400px" height="675px">
+                    <div class="overlay">
+                    <h3>Mark Anthony Sheehan</h3>
+                    <p>Mark Anthony Sheehan (29 October 1976 – 14 April 2023) was an Irish musician. From 1996 to 2001, he was a member of
+                    the boy band Mytown.[2] In 2001, he co-founded alternative rock band the Script. He played lead guitar for the band.</p>
+
+                   </div>
+                </div>
+   
+                <div class="box">
+                    <img src="glen.jpg" alt="glen" width="400px" height="675px">
+                    <div class="overlay">
+                    <h3>Glen Power</h3>
+                    <p>Glen Power (born 5 July 1978) is the talented drummer of the Irish rock band The Script. Alongside his bandmates, 
+                    Danny O'Donoghue and Mark Sheehan, Glen has been instrumental in shaping the band's distinct blend of rock and pop 
+                    music, known for their heartfelt lyrics and chart-topping hits.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+<script>
+    // script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const checkBox = document.getElementById('check');
+    const nav = document.querySelector('nav');
+    const content = document.querySelector('.content');
+
+    checkBox.addEventListener('change', () => {
+        if (window.innerWidth >= 768) {
+            if (checkBox.checked) {
+                content.style.marginTop = `${nav.offsetHeight}px`;
+            } else {
+                content.style.marginTop = '0';
+            }
+        }
+    });
+
+    // Ensure the content margin is reset if the window is resized
+    window.addEventListener('resize', () => {
+        if (window.innerWidth < 768) {
+            content.style.marginTop = '0';
+        } else if (checkBox.checked) {
+            content.style.marginTop = `${nav.offsetHeight}px`;
+        }
+    });
+});
+</script>            
+</body>
+</html>
